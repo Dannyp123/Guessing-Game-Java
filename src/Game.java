@@ -14,13 +14,17 @@ public class Game {
     }
     public void guessingTheNum() {
         Scanner reader = new Scanner(System.in);
-        boolean n = true;
+        boolean gameGoesOn = true;
 
         System.out.print("Pick a number from 1 to 100 ");
-        while (n == true) {
+        while (gameGoesOn) {
             int num = reader.nextInt();
 
-            if(num == randNum) {
+            if (num > 100) {
+                System.out.println("Must be from 1 to 100!!");
+            }
+
+            else if(num == randNum) {
                 System.out.print("\nYou guessed right my friend!");
                 System.exit(0);
             }
